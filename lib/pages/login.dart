@@ -173,12 +173,22 @@ class Login extends StatelessWidget {
                       width: double.infinity,
                       child: Align(
                         alignment: Alignment.centerRight,
-                        child: Text(
-                          "Forgot Password?",
-                          style: GoogleFonts.montserrat(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            color: Color(0xFF000000),
+                        child: GestureDetector(
+                          onTap: () {
+                            // Add your redirection logic here
+                            // For example, you could navigate to the password reset screen
+                            Navigator.pushNamed(
+                              context,
+                              MyRoutes.forgetPasswordRoute,
+                            );
+                          },
+                          child: Text(
+                            "Forgot Password?",
+                            style: GoogleFonts.montserrat(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                              color: Color(0xFF000000),
+                            ),
                           ),
                         ),
                       ),
