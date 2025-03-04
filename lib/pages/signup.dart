@@ -90,7 +90,7 @@ class Signup extends StatelessWidget {
 
               const SizedBox(height: 16.79),
 
-              // Login Title
+              // Sign up Title
               Container(
                 height: 43,
                 width: double.infinity,

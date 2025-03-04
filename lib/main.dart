@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projects/pages/forgot_password.dart';
 import 'package:projects/pages/home_page.dart';
 import 'package:projects/pages/login.dart';
 // import 'package:projects/pages/login_page.dart';
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
         MyRoutes.homeRoute: (context) => HomePage(),
         MyRoutes.loginRoute: (context) => Login(),
         MyRoutes.signupRoute: (context) => Signup(),
+        MyRoutes.forgetPasswordRoute: (context) => ForgotPassword(),
         MyRoutes.welcome: (context) => Welcome(),
         MyRoutes.shop: (context) => ShopPage(),
         MyRoutes.shopSingle: (context) => ShopSingle(),
