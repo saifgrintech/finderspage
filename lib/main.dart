@@ -35,6 +35,8 @@ class MyApp extends StatelessWidget {
         MyRoutes.loginRoute: (context) => Login(),
         MyRoutes.signupRoute: (context) => Signup(),
         MyRoutes.forgetPasswordRoute: (context) => ForgotPassword(),
+        MyRoutes.loginRoute: (context) => Login(),
+        MyRoutes.signupRoute: (context) => Signup(),
         MyRoutes.welcome: (context) => Welcome(),
         MyRoutes.shop: (context) => ShopPage(),
         MyRoutes.shopSingle: (context) => ShopSingle(),
