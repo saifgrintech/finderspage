@@ -32,7 +32,7 @@ class _ShopSingleState extends State<ShopSingle> {
         title: Text(
           "Shop Now",
           style: GoogleFonts.montserrat(
-            fontSize: 20,
+            fontSize: 16,
             fontWeight: FontWeight.w600,
             color: Colors.black,
           ),
@@ -357,60 +357,24 @@ class _ShopSingleState extends State<ShopSingle> {
         ),
       ),
 
-      // Bottom Navigation Bar
+      // bottomNavbar
       bottomNavigationBar: Container(
-        padding: EdgeInsets.symmetric(vertical: 8), // Padding for spacing
+        padding: EdgeInsets.symmetric(vertical: 8),
         decoration: BoxDecoration(
           color: Colors.white,
           border: Border(
-            top: BorderSide(
-              color: Colors.grey.shade300,
-              width: 1,
-            ), // Optional border
+            top: BorderSide(color: Colors.grey.shade300, width: 1),
           ),
         ),
         child: Row(
-          mainAxisAlignment:
-              MainAxisAlignment.spaceEvenly, // Evenly distribute icons
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            // Home
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                // Icon(Icons.home_outlined, color: Colors.black),
-                Image.asset(
-                  'assets/images/home-icon.png',
-                  color: Colors.black,
-                  height: 20,
-                  width: 20,
-                ),
-                SizedBox(height: 4), // Space between icon and text
-                Text(
-                  "Home",
-                  style: TextStyle(fontSize: 12, color: Colors.black),
-                ),
-              ],
+            _buildBottomNavItem('assets/images/home-icon.png', 'Home', '/home'),
+            _buildBottomNavItem(
+              'assets/images/calendar-icon.png',
+              'Calendar',
+              '',
             ),
-
-            // Calendar
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Image.asset(
-                  'assets/images/calendar-icon.png',
-                  color: Colors.black,
-                  height: 20,
-                  width: 20,
-                ),
-                SizedBox(height: 4),
-                Text(
-                  "Calendar",
-                  style: TextStyle(fontSize: 12, color: Colors.black),
-                ),
-              ],
-            ),
-
-            // Center Floating Button
             Container(
               width: 60,
               height: 60,
@@ -427,42 +391,15 @@ class _ShopSingleState extends State<ShopSingle> {
                 onPressed: () {},
               ),
             ),
-
-            // Create List
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                // Icon(Icons.list, color: Colors.black),
-                Image.asset(
-                  'assets/images/newpost-icon.png',
-                  color: Colors.black,
-                  height: 20,
-                  width: 20,
-                ),
-                SizedBox(height: 4),
-                Text(
-                  "Create List",
-                  style: TextStyle(fontSize: 12, color: Colors.black),
-                ),
-              ],
+            _buildBottomNavItem(
+              'assets/images/newpost-icon.png',
+              'Create List',
+              '',
             ),
-
-            // Profile
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Image.asset(
-                  'assets/images/profile-icon.png',
-                  color: Colors.black,
-                  height: 20,
-                  width: 20,
-                ),
-                SizedBox(height: 4),
-                Text(
-                  "Profile",
-                  style: TextStyle(fontSize: 12, color: Colors.black),
-                ),
-              ],
+            _buildBottomNavItem(
+              'assets/images/profile-icon.png',
+              'Profile',
+              '',
             ),
           ],
         ),
@@ -497,6 +434,22 @@ class _ShopSingleState extends State<ShopSingle> {
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  Widget _buildBottomNavItem(String iconPath, String label, String route) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, route);
+      },
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Image.asset(iconPath, color: Colors.black, height: 20, width: 20),
+          SizedBox(height: 4),
+          Text(label, style: TextStyle(fontSize: 12, color: Colors.black)),
+        ],
       ),
     );
   }

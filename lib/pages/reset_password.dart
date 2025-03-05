@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:projects/utils/routes.dart';
 
-class Login extends StatelessWidget {
-  const Login({super.key});
+class ResetPassword extends StatelessWidget {
+  const ResetPassword({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,6 +12,7 @@ class Login extends StatelessWidget {
       body: Center(
         child: Container(
           width: 334,
+          // height: 322,
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(20),
@@ -20,22 +21,22 @@ class Login extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 22),
+              const SizedBox(height: 16),
               // Logo
               Center(
                 child: Image.asset("assets/images/new_logo.png", width: 50),
               ),
 
-              const SizedBox(height: 16.79),
+              const SizedBox(height: 12.79),
 
-              // Login Title
+              // Forgot Title
               Container(
                 height: 43,
                 width: double.infinity,
                 decoration: const BoxDecoration(color: Color(0xFFA54DB7)),
                 child: Center(
                   child: Text(
-                    "Login",
+                    "Reset Password",
                     style: GoogleFonts.montserrat(
                       fontSize: 20,
                       height: 1.5,
@@ -45,87 +46,29 @@ class Login extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 21),
 
-              // Email Field
+              // Password Field
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Email Label
-                    Text(
-                      "Email",
-                      style: GoogleFonts.montserrat(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
-                        color: Color(0xFF000000),
-                      ),
-                    ),
-
-                    const SizedBox(height: 8),
-
-                    // Email Input Field
-                    SizedBox(
-                      width: double.infinity, // Take full width within padding
-                      height: 43,
-                      child: TextField(
-                        cursorColor: Color(0xFF616161),
-                        style: const TextStyle(
-                          color: Colors.black,
-                          fontSize: 13,
-                        ),
-                        decoration: InputDecoration(
-                          hintText: "Enter email",
-                          hintStyle: GoogleFonts.montserrat(
-                            fontSize: 13,
-                            color: Color(0xFF616161),
-                          ),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(5),
-                            borderSide: const BorderSide(
-                              color: Color(0xFFDC7228),
-                              width: 1,
-                            ),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(5),
-                            borderSide: const BorderSide(
-                              color: Color(0xFFDC7228),
-                              width: 1,
-                            ),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(5),
-                            borderSide: const BorderSide(
-                              color: Color(0xFFDC7228),
-                              width: 1,
-                            ),
-                          ),
-                          contentPadding: const EdgeInsets.symmetric(
-                            horizontal: 13,
-                            vertical: 10,
-                          ),
-                        ),
-                      ),
-                    ),
-
-                    const SizedBox(height: 20),
-
                     // Password Label
                     Text(
-                      "Password",
+                      "New Password",
                       style: GoogleFonts.montserrat(
                         fontSize: 14,
                         fontWeight: FontWeight.w500,
                         color: Color(0xFF000000),
                       ),
                     ),
+
                     const SizedBox(height: 8),
 
                     // Password Input Field
                     SizedBox(
-                      width: double.infinity,
+                      width: double.infinity, // Take full width within padding
                       height: 43,
                       child: TextField(
                         cursorColor: Color(0xFF616161),
@@ -167,7 +110,67 @@ class Login extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(height: 8),
+
+                    const SizedBox(height: 14),
+
+                    // Confirm Password Label
+                    Text(
+                      "Confirm Password",
+                      style: GoogleFonts.montserrat(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xFF000000),
+                      ),
+                    ),
+
+                    const SizedBox(height: 8),
+
+                    // Password Input Field
+                    SizedBox(
+                      width: double.infinity, // Take full width within padding
+                      height: 43,
+                      child: TextField(
+                        cursorColor: Color(0xFF616161),
+                        style: const TextStyle(
+                          color: Colors.black,
+                          fontSize: 13,
+                        ),
+                        decoration: InputDecoration(
+                          hintText: "Enter password",
+                          hintStyle: GoogleFonts.montserrat(
+                            fontSize: 13,
+                            color: Color(0xFF616161),
+                          ),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(5),
+                            borderSide: const BorderSide(
+                              color: Color(0xFFDC7228),
+                              width: 1,
+                            ),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(5),
+                            borderSide: const BorderSide(
+                              color: Color(0xFFDC7228),
+                              width: 1,
+                            ),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(5),
+                            borderSide: const BorderSide(
+                              color: Color(0xFFDC7228),
+                              width: 1,
+                            ),
+                          ),
+                          contentPadding: const EdgeInsets.symmetric(
+                            horizontal: 13,
+                            vertical: 10,
+                          ),
+                        ),
+                      ),
+                    ),
+
+                    const SizedBox(height: 10),
 
                     SizedBox(
                       width: double.infinity,
@@ -175,20 +178,29 @@ class Login extends StatelessWidget {
                         alignment: Alignment.centerRight,
                         child: GestureDetector(
                           onTap: () {
-                            // Add your redirection logic here
-                            // For example, you could navigate to the password reset screen
                             Navigator.pushNamed(
                               context,
                               MyRoutes.forgetPasswordRoute,
                             );
                           },
-                          child: Text(
-                            "Forgot Password?",
-                            style: GoogleFonts.montserrat(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                              color: Color(0xFF000000),
-                            ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Image.asset(
+                                'assets/images/back-btn.png',
+                                width: 24,
+                                height: 24,
+                              ),
+                              SizedBox(width: 2),
+                              Text(
+                                "Back",
+                                style: GoogleFonts.montserrat(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w600,
+                                  color: Color(0xFF000000),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
@@ -196,9 +208,9 @@ class Login extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(height: 24),
+              const SizedBox(height: 14),
 
-              // Login Button
+              // Submit Button
               Center(
                 child: SizedBox(
                   width: 145,
@@ -225,15 +237,12 @@ class Login extends StatelessWidget {
                       borderRadius: BorderRadius.circular(50),
                       child: InkWell(
                         onTap: () {
-                          Navigator.pushReplacementNamed(
-                            context,
-                            MyRoutes.homeRoute,
-                          );
+                          Navigator.pushNamed(context, MyRoutes.loginRoute);
                         },
                         borderRadius: BorderRadius.circular(50),
                         child: Center(
                           child: Text(
-                            "Login",
+                            "Submit",
                             style: GoogleFonts.montserrat(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
@@ -246,101 +255,7 @@ class Login extends StatelessWidget {
                   ),
                 ),
               ),
-
-              const SizedBox(height: 22),
-
-              // Signup Link
-              Center(
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      "Don't have an account?",
-                      style: GoogleFonts.montserrat(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.black,
-                      ),
-                    ),
-                    TextButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, MyRoutes.signupRoute);
-                      },
-                      style: TextButton.styleFrom(
-                        padding: EdgeInsets.all(4),
-                        minimumSize: Size(0, 0),
-                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                      ),
-                      child: Text(
-                        "Sign up",
-                        style: GoogleFonts.montserrat(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 14,
-                          color: Colors.black,
-                          decoration: TextDecoration.underline,
-                          decorationColor: Colors.black,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(height: 18),
-
-              // "Or" Text
-              Center(
-                child: Text(
-                  "Or",
-                  style: GoogleFonts.montserrat(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.black,
-                  ),
-                ),
-              ),
-              const SizedBox(height: 9),
-
-              Center(
-                child: Text(
-                  "Login with",
-                  style: GoogleFonts.montserrat(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.black,
-                  ),
-                ),
-              ),
-              const SizedBox(height: 21),
-
-              // Social Login Buttons
-              Center(
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    IconButton(
-                      icon: SizedBox(
-                        width: 32,
-                        height: 32,
-                        child: Image.asset("assets/images/facebook-icon.png"),
-                      ),
-                      iconSize: 32,
-                      onPressed: () {},
-                    ),
-
-                    IconButton(
-                      icon: SizedBox(
-                        width: 32,
-                        height: 32,
-                        child: Image.asset("assets/images/google-icon.png"),
-                      ),
-                      iconSize: 32,
-                      onPressed: () {},
-                    ),
-                  ],
-                ),
-              ),
-
-              const SizedBox(height: 21),
+              const SizedBox(height: 34),
             ],
           ),
         ),

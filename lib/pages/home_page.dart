@@ -105,7 +105,9 @@ class HomePage extends StatelessWidget {
                   size: 24,
                   color: Colors.black,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, MyRoutes.notificationRoute);
+                },
               ),
             ],
           ),
@@ -311,40 +313,52 @@ class HomePage extends StatelessWidget {
               MainAxisAlignment.spaceEvenly, // Evenly distribute icons
           children: [
             // Home
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                // Icon(Icons.home_outlined, color: Colors.black),
-                Image.asset(
-                  'assets/images/home-icon.png',
-                  color: Colors.black,
-                  height: 20,
-                  width: 20,
-                ),
-                SizedBox(height: 4), // Space between icon and text
-                Text(
-                  "Home",
-                  style: TextStyle(fontSize: 12, color: Colors.black),
-                ),
-              ],
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, MyRoutes.homeRoute);
+              },
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Image.asset(
+                    'assets/images/home-icon.png',
+                    color: Colors.black,
+                    height: 20,
+                    width: 20,
+                  ),
+                  SizedBox(height: 4), // Space between icon and text
+                  Text(
+                    "Home",
+                    style: TextStyle(fontSize: 12, color: Colors.black),
+                  ),
+                ],
+              ),
             ),
 
             // Calendar
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Image.asset(
-                  'assets/images/calendar-icon.png',
-                  color: Colors.black,
-                  height: 20,
-                  width: 20,
-                ),
-                SizedBox(height: 4),
-                Text(
-                  "Calendar",
-                  style: TextStyle(fontSize: 12, color: Colors.black),
-                ),
-              ],
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  '/calendar',
+                ); // Navigate to Calendar Screen
+              },
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Image.asset(
+                    'assets/images/calendar-icon.png',
+                    color: Colors.black,
+                    height: 20,
+                    width: 20,
+                  ),
+                  SizedBox(height: 4),
+                  Text(
+                    "Calendar",
+                    style: TextStyle(fontSize: 12, color: Colors.black),
+                  ),
+                ],
+              ),
             ),
 
             // Center Floating Button
@@ -361,45 +375,62 @@ class HomePage extends StatelessWidget {
               ),
               child: IconButton(
                 icon: Icon(Icons.add, size: 35, color: Colors.white),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/create');
+                },
               ),
             ),
 
             // Create List
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                // Icon(Icons.list, color: Colors.black),
-                Image.asset(
-                  'assets/images/newpost-icon.png',
-                  color: Colors.black,
-                  height: 20,
-                  width: 20,
-                ),
-                SizedBox(height: 4),
-                Text(
-                  "Create List",
-                  style: TextStyle(fontSize: 12, color: Colors.black),
-                ),
-              ],
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  '/create-list',
+                ); // Navigate to Create List Screen
+              },
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Image.asset(
+                    'assets/images/newpost-icon.png',
+                    color: Colors.black,
+                    height: 20,
+                    width: 20,
+                  ),
+                  SizedBox(height: 4),
+                  Text(
+                    "Create List",
+                    style: TextStyle(fontSize: 12, color: Colors.black),
+                  ),
+                ],
+              ),
             ),
 
             // Profile
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Image.asset(
-                  'assets/images/profile-icon.png',
-                  color: Colors.black,
-                  height: 20,
-                  width: 20,
-                ),
-                SizedBox(height: 4),
-                Text(
-                  "Profile",
-                  style: TextStyle(fontSize: 12, color: Colors.black),
-                ),
-              ],
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  '/profile',
+                ); // Navigate to Profile Screen
+              },
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Image.asset(
+                    'assets/images/profile-icon.png',
+                    color: Colors.black,
+                    height: 20,
+                    width: 20,
+                  ),
+                  SizedBox(height: 4),
+                  Text(
+                    "Profile",
+                    style: TextStyle(fontSize: 12, color: Colors.black),
+                  ),
+                ],
+              ),
             ),
           ],
         ),

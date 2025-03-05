@@ -22,7 +22,7 @@ class _ShopPageState extends State<ShopPage> {
           child: Text(
             "Shop Now",
             style: GoogleFonts.montserrat(
-              fontSize: 20,
+              fontSize: 16,
               fontWeight: FontWeight.w600,
               color: Colors.black,
             ),
@@ -117,6 +117,8 @@ class _ShopPageState extends State<ShopPage> {
           ],
         ),
       ),
+
+      // bottomNavbar
       bottomNavigationBar: Container(
         padding: EdgeInsets.symmetric(vertical: 8),
         decoration: BoxDecoration(
@@ -128,8 +130,12 @@ class _ShopPageState extends State<ShopPage> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            _buildBottomNavItem('assets/images/home-icon.png', 'Home'),
-            _buildBottomNavItem('assets/images/calendar-icon.png', 'Calendar'),
+            _buildBottomNavItem('assets/images/home-icon.png', 'Home', '/home'),
+            _buildBottomNavItem(
+              'assets/images/calendar-icon.png',
+              'Calendar',
+              '',
+            ),
             Container(
               width: 60,
               height: 60,
@@ -149,8 +155,13 @@ class _ShopPageState extends State<ShopPage> {
             _buildBottomNavItem(
               'assets/images/newpost-icon.png',
               'Create List',
+              '',
             ),
-            _buildBottomNavItem('assets/images/profile-icon.png', 'Profile'),
+            _buildBottomNavItem(
+              'assets/images/profile-icon.png',
+              'Profile',
+              '',
+            ),
           ],
         ),
       ),
@@ -309,14 +320,19 @@ class _ShopPageState extends State<ShopPage> {
     );
   }
 
-  Widget _buildBottomNavItem(String iconPath, String label) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Image.asset(iconPath, color: Colors.black, height: 20, width: 20),
-        SizedBox(height: 4),
-        Text(label, style: TextStyle(fontSize: 12, color: Colors.black)),
-      ],
+  Widget _buildBottomNavItem(String iconPath, String label, String route) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, route);
+      },
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Image.asset(iconPath, color: Colors.black, height: 20, width: 20),
+          SizedBox(height: 4),
+          Text(label, style: TextStyle(fontSize: 12, color: Colors.black)),
+        ],
+      ),
     );
   }
 

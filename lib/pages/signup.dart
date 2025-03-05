@@ -98,7 +98,7 @@ class Signup extends StatelessWidget {
                 child: Center(
                   child: Text(
                     "Sign up",
-                    style: GoogleFonts.poppins(
+                    style: GoogleFonts.montserrat(
                       fontSize: 20,
                       height: 1.5,
                       fontWeight: FontWeight.w600,
@@ -173,10 +173,10 @@ class Signup extends StatelessWidget {
                       borderRadius: BorderRadius.circular(50),
                       child: InkWell(
                         onTap: () {
-                          // Navigator.pushReplacementNamed(
-                          //   context,
-                          //   MyRoutes.homeRoute,
-                          // );
+                          Navigator.pushReplacementNamed(
+                            context,
+                            MyRoutes.loginRoute,
+                          );
                         },
                         borderRadius: BorderRadius.circular(50),
                         child: Center(

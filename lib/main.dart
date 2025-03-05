@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:projects/pages/Profile/profile.dart';
 import 'package:projects/pages/forgot_password.dart';
 import 'package:projects/pages/home_page.dart';
 import 'package:projects/pages/login.dart';
 // import 'package:projects/pages/login_page.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:projects/pages/notifications.dart';
+import 'package:projects/pages/reset_password.dart';
 import 'package:projects/pages/shop.dart';
 import 'package:projects/pages/shop_single.dart';
 import 'package:projects/pages/signup.dart';
@@ -35,11 +38,14 @@ class MyApp extends StatelessWidget {
         MyRoutes.loginRoute: (context) => Login(),
         MyRoutes.signupRoute: (context) => Signup(),
         MyRoutes.forgetPasswordRoute: (context) => ForgotPassword(),
+        MyRoutes.resetPasswordRoute: (context) => ResetPassword(),
+        MyRoutes.notificationRoute: (context) => Notifications(),
         MyRoutes.loginRoute: (context) => Login(),
         MyRoutes.signupRoute: (context) => Signup(),
         MyRoutes.welcome: (context) => Welcome(),
         MyRoutes.shop: (context) => ShopPage(),
         MyRoutes.shopSingle: (context) => ShopSingle(),
+        MyRoutes.profileRoute: (context) => Profile(),
         // '/': (context) => HomePage(),
         // '/home': (context) => HomePage(),
         // '/login': (context) => LoginPage(),

@@ -37,7 +37,7 @@ class ForgotPassword extends StatelessWidget {
                 child: Center(
                   child: Text(
                     "Forgot Password",
-                    style: GoogleFonts.poppins(
+                    style: GoogleFonts.montserrat(
                       fontSize: 20,
                       height: 1.5,
                       fontWeight: FontWeight.w600,
@@ -174,7 +174,12 @@ class ForgotPassword extends StatelessWidget {
                       color: Colors.transparent,
                       borderRadius: BorderRadius.circular(50),
                       child: InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.pushNamed(
+                            context,
+                            MyRoutes.resetPasswordRoute,
+                          );
+                        },
                         borderRadius: BorderRadius.circular(50),
                         child: Center(
                           child: Text(
